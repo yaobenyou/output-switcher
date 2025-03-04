@@ -1,0 +1,85 @@
+{
+  "build": {
+    "beforeDevCommand": "pnpm dev",
+    "beforeBuildCommand": "pnpm build",
+    "devPath": "http://localhost:17002",
+    "distDir": "../dist"
+  },
+  "package": {
+    "productName": "OutputSwitcher",
+    "version": "0.2.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "shell": {
+        "all": false,
+        "open": true
+      },
+      "window": {
+        "all": false,
+        "setAlwaysOnTop": true,
+        "setDecorations": true,
+        "startDragging": true,
+        "setSize": true,
+        "setMinSize": true,
+        "setMaxSize": true
+      }
+    },
+    "windows": [
+      {
+        "title": "OutputSwitcher",
+        "width": 800,
+        "height": 600,
+        "fullscreen": false,
+        "maximizable": false,
+        "resizable": true,
+        "transparent": true,
+        "skipTaskbar": true,
+        "alwaysOnTop": true,
+        "hiddenTitle": true,
+        "titleBarStyle": "Visible",
+        "decorations": false,
+        "additionalBrowserArgs": "--disable-features=msWebOOUI,msPdfOOUI,msSmartScreenProtection --disable-gpu --disable-background-networking"
+      }
+    ],
+    "security": {
+      "csp": null
+    },
+    "bundle": {
+      "active": true,
+      "targets": "all",
+      "identifier": "output-switcher",
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ],
+      "windows": {
+        "allowDowngrades": true,
+        "nsis": null,
+        "tsp": false,
+        "webviewFixedRuntimePath": null,
+        "webviewInstallMode": {
+          "silent": true,
+          "type": "downloadBootstrapper"
+        },
+        "wix": {
+          "language": [
+            "en-US",
+            "ja-JP"
+          ]
+        },
+        "certificateThumbprint": "1B1A97B87C6059CB8B58A007D1FFDC00D4F61811",
+        "digestAlgorithm": "sha256",
+        "timestampUrl": "http://timestamp.comodoca.com"
+      }
+    },
+    "systemTray": {
+      "iconAsTemplate": true,
+      "iconPath": "icons/128x128.png"
+    }
+  }
+}
